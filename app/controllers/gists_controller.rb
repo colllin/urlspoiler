@@ -1,5 +1,4 @@
 require 'gist'
-require 'ruby-debug'
 class GistsController < ApplicationController
   
   after_filter :set_access_control_headers
