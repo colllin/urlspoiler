@@ -6,18 +6,17 @@ class GistsController < ApplicationController
   
   def index
     
-    tail = params[:id] + '.js'
+    tail = (params[:id].present? ? params[:id] : '992729') + '.js'
     tail += '?file=' + params[:file] if params[:file].present?
-    # @uri = URI.parse("http://gist.github.com/#{tail}")
-    #  req = Net::HTTP::Get.new(@uri.path)
-    #  res = Net::HTTP.start(@uri.host, @uri.port) {|http|
-    #    http.request(req)
-    #  }
-    #  
-    # @gist_js = res.body
+    
     @gist_js = Gist.get("http://gist.github.com/#{tail}")
     
-    render 'index', :layout => nil if params[:format] == "html"
+    case params[:format]
+    when "html"
+      render 'index', :layout => nil
+    else
+      render 'index', :layout => 'iframe'
+    end
     
   end
 
