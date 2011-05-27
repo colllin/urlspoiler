@@ -1,4 +1,4 @@
 class Gist
   include HTTParty
-  format :json
+  format :plain
 end
