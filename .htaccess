@@ -1,5 +1,4 @@
 RewriteEngine on
-RewriteCond %{HTTP_HOST}   !^$
-RewriteCond %{HTTP_HOST}   !^your-domain.com [NC]
-RewriteRule ^/(.*)         http://your-domain.com/$1 [L,R=301]
+RewriteCond %{HTTP_HOST}   ^www.urlspoiler.co$
+RewriteRule ^(.*)$         http://urlspoiler.co/$1 [R=301,L]
 
