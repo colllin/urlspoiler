@@ -1,0 +1,16 @@
+%div{:id => "gist-#{params[:id]}-container"}
+:css
+  .gist .gist-file { margin-bottom:0; }
+  .gist .gist-file + .gist-file { margin-top:1em; }
+:javascript
+  window.gist_write = function(str) {
+    if (typeof(window.gists) == "undefined") {
+      window.gists = {};
+    }
+    if (typeof(window.gists[#{params[:id]}]) == "undefined") {
+      window.gists[#{params[:id]}] = "";
+    }
+    window.gists[#{params[:id]}] += str;
+  };
+  #{@gist_js.gsub(/document.write/, '; window.gist_write')}
+  document.getElementById("gist-#{params[:id]}-container").innerHTML = window.gists[#{params[:id]}];
