@@ -1,11 +1,17 @@
-** Smart URL Previews **
+urlspoiler.co - Smart URL Previews
+==================================
 
-End goal: urlspoiler.co/try/<url>
+End goal:  urlspoiler.co/try/<url>
 
 Right now: urlspoiler.co/gists?id=<id>&file=<filename>
 
-* Please Help!  To request support for more preview types, submit your request in the Issues tab, or add it yourself and send me a pull request. *
 
-Supported previews:
+**
+Please Help!  To request support for more preview types, submit your request in the Issues tab, or add it yourself and send me a pull request.
+**
+
+
+Supported preview types:
+========================
 Github Gists - urlspoiler.co/gists?id=<id>&file=<filename> - help: https://gist.github.com/992729
 
