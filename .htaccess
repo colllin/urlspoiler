@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST}   !^$
+RewriteCond %{HTTP_HOST}   !^your-domain.com [NC]
+RewriteRule ^/(.*)         http://your-domain.com/$1 [L,R=301]
+
