@@ -1,7 +1,8 @@
 %div{:id => "gist-#{params[:id]}-container"}
 :css
-  .gist .gist-file { margin-bottom:0; }
+  .gist .gist-file { font-size:12px; margin-bottom:0; }
   .gist .gist-file + .gist-file { margin-top:1em; }
+  .gist .gist-file .gist-meta { font-family:helvetica,arial; font-size:12px; }
 :javascript
   window.gist_write = function(str) {
     if (typeof(window.gists) == "undefined") {
