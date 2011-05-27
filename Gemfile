@@ -15,7 +15,6 @@ gem 'sqlite3'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
-gem 'ruby-debug19', :require => 'ruby-debug'
 gem 'haml'
 
 # Bundle the extra gems:
@@ -31,3 +30,6 @@ gem 'httparty'
 # group :development, :test do
 #   gem 'webrat'
 # end
+group :development, :test do
+  gem RUBY_VERSION.include?('1.9') ? 'ruby-debug19' : 'ruby-debug', :require => 'ruby-debug'
+end
